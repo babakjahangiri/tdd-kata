@@ -1,3 +1,3 @@
-function ConvertNumber(number) {
-  return 'string';
+export function convertNumber(number) {
+  return 'one';
 }
