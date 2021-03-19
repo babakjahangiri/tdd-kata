@@ -22,10 +22,5 @@
   "bugs": {
     "url": "https://github.com/babakjahangiri/tdd-kata/issues"
   },
-  "homepage": "https://github.com/babakjahangiri/tdd-kata#readme",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  }
+  "homepage": "https://github.com/babakjahangiri/tdd-kata#readme"
 }
