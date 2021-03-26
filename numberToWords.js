@@ -34,6 +34,8 @@ export function convertNumber(number) {
     'eighty',
     'ninety',
   ];
-
-  return 'one';
+if(number < 10){
+  return dg[number];
+}
+ 
 }
