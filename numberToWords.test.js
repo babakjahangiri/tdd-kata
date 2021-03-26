@@ -19,7 +19,7 @@ describe('the function should return the number words', () => {
     expect(actual).toBe(expected);
   });
 
-  xit('should return twenty-one', () => {
+  it('should return twenty-one', () => {
     const expected = 'twenty-one';
     const actual = convertNumber(21);
     expect(actual).toBe(expected);
