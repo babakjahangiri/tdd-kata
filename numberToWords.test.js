@@ -12,6 +12,12 @@ describe('the function should return the number words', () => {
     const actual = convertNumber(1);
     expect(actual).toBe(expected);
   });
+ 
+  it('should return eleven', () => {
+    const expected = 'eleven';
+    const actual = convertNumber(11);
+    expect(actual).toBe(expected);
+  });
 
   xit('should return twenty-one', () => {
     const expected = 'twenty-one';

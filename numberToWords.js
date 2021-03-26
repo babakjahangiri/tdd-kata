@@ -36,6 +36,8 @@ export function convertNumber(number) {
   ];
 if(number < 10){
   return dg[number];
+}else if(number < 20){
+  return tn[number % 10];
 }
  
 }
