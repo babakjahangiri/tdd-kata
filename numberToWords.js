@@ -1,5 +1,4 @@
-export function convertNumber(number) {
-  let and = 0;
+export function convertNumber(number, ind = 0, result = "", and = 0) {
   var th = ["", "thousand", "million", "billion", "trillion"];
   var dg = [
     "zero",
@@ -38,24 +37,6 @@ export function convertNumber(number) {
     "ninety",
   ];
 
-  const getGroupsOfDigit = (number, ind = 0, result = "") => {
-    if (ind > 4) {
-      return "Error! Number is bigger than 999 999 999 999 999";
-    }
-    let hundred = number % 1000;
-    let thousand = (number - hundred) / 1000;
-    if (result) {
-      result = ind + and ? `${result}` : `and ${result}`;
-    }
-    result = `${hundred || !result ? getBeforeSandLion(hundred) : ""}${
-      th[ind] && hundred ? " " + th[ind] + " " : ""
-    }${result}`;
-    if (thousand) {
-      return getGroupsOfDigit(thousand, ++ind, result);
-    }
-    return result;
-  };
-
   const getDigits = (number) => {
     return dg[number];
   };
@@ -89,6 +70,19 @@ export function convertNumber(number) {
       }`;
     }
   };
-
-  return getGroupsOfDigit(number);
+  if (ind > 4) {
+    return "Error! Number is bigger than 999 999 999 999 999";
+  }
+  let hundred = number % 1000;
+  let thousand = (number - hundred) / 1000;
+  if (result) {
+    result = ind + and ? `${result}` : `and ${result}`;
+  }
+  result = `${hundred || !result ? getBeforeSandLion(hundred) : ""}${
+    th[ind] && hundred ? " " + th[ind] + " " : ""
+  }${result}`;
+  if (thousand) {
+    return convertNumber(thousand, ++ind, result, and);
+  }
+  return result;
 }

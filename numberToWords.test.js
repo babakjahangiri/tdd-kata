@@ -32,7 +32,6 @@ describe("the function should return the number words", () => {
   ];
 
   tests.map((test) => {
-    console.log(test);
     it("should return " + test.word, () => {
       const expected = test.word;
       const actual = convertNumber(test.number);
