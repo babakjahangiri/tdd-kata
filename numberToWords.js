@@ -39,16 +39,18 @@ export function convertNumber(number) {
   ];
 
   const getGroupsOfDigit = (number, ind = 0, result = "") => {
-    if(ind > 4){
+    if (ind > 4) {
       return "Error! Number is bigger than 999 999 999 999 999";
     }
     let hundred = number % 1000;
     let thousand = (number - hundred) / 1000;
     if (result) {
-      result = (ind + and) ? `${result}` : `and ${result}`;
+      result = ind + and ? `${result}` : `and ${result}`;
     }
-    result = `${(hundred||!result) ? getBeforeSandLion(hundred):""}${(th[ind]&&hundred) ? ` ${th[ind]} `:""}${result}`;
-    if (thousand > 0) {
+    result = `${hundred || !result ? getBeforeSandLion(hundred) : ""}${
+      th[ind] && hundred ? " " + th[ind] + " " : ""
+    }${result}`;
+    if (thousand) {
       return getGroupsOfDigit(thousand, ++ind, result);
     }
     return result;
@@ -78,10 +80,9 @@ export function convertNumber(number) {
 
   const getBeforeSandLion = (number) => {
     if (number < 100) {
-      and = -1
+      and = -1;
       return getBeforeHundred(number);
     } else if (number < 1000) {
-      ;
       let tens = number % 100;
       return `${getDigits((number - tens) / 100)} hundred${
         tens ? ` and ${getBeforeHundred(tens)}` : ``
