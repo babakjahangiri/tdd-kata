@@ -78,11 +78,11 @@ export function convertNumber(number, ind = 0, result = "", and = 0) {
   if (result) {
     result = ind + and ? `${result}` : `and ${result}`;
   }
-  result = `${hundred || !result ? getBeforeSandLion(hundred) : ""}${
-    th[ind] && hundred ? " " + th[ind] + " " : ""
-  }${result}`;
+  result = `${
+    hundred || !(thousand || result) ? getBeforeSandLion(hundred) : ""
+  }${th[ind] && hundred ? " " + th[ind] + " " : ""}${result}`;
   if (thousand) {
     return convertNumber(thousand, ++ind, result, and);
   }
-  return result;
+  return result.trim();
 }

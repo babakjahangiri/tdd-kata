@@ -18,15 +18,26 @@ describe("the function should return the number words", () => {
     {
       number: 56945781,
       word:
-        "fifty-six million nine hundred and forty-five thousand seven hundred and eighty-one",
+      "fifty-six million nine hundred and forty-five thousand seven hundred and eighty-one",
     },
     {
       number: 999999999,
       word:
-        "nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine",
+      "nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine",
     },
+    
     {
-      number: 1000000000000001,
+      number: 500000000000,
+      word: "five hundred billion",
+    },
+
+    {
+      number: 15000001000000,
+      word: "fifteen trillion one million",
+    },
+
+    {
+      number: 1000000000000000001,
       word: "Error! Number is bigger than 999 999 999 999 999",
     },
   ];
