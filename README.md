@@ -10,7 +10,6 @@ Create a function (or library), suitable for use in a server-side application, t
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | 0                | zero                                                                                                    |
 | 1                | one                                                                                                     |
-| 11               | eleven                                                                                                  |
 | 21               | twenty-one                                                                                              |
 | 123              | one hundred and twenty-three                                                                            |
 | 1005             | one thousand and five                                                                                   |

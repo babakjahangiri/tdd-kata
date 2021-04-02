@@ -4,7 +4,6 @@ describe("the function should return the number words", () => {
   const tests = [
     { number: 0, word: "zero" },
     { number: 1, word: "one" },
-    { number: 11, word: "eleven" },
     { number: 21, word: "twenty-one" },
     { number: 123, word: "one hundred and twenty-three" },
     { number: 500, word: "five hundred" },
