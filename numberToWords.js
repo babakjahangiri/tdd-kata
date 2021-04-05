@@ -66,21 +66,23 @@ export function convertNumber(number) {
 
   const convert = (number, ind = 0, result = "") => {
     if (ind > 4) {
-    return "Error! Number is bigger than 999 999 999 999 999";
-  }
-  let hundred = number % 1000;
-  let thousand = (number - hundred) / 1000;
-  if (result) {
-    result = ind + and ? `${result}` : `and ${result}`;
-  }
-  result = `${
-    hundred || !(thousand || result) ? getBeforeThousand(hundred) : ""
-  }${th[ind] && hundred ? " " + th[ind] + " " : ""}${result}`;
-  if (thousand) {
-    return convert(thousand, ++ind, result, and);
-  }
-  return result.trim();
+      return "Error! Number is bigger than 999 999 999 999 999";
+    }
+    let hundred = number % 1000;
+    let thousand = (number - hundred) / 1000;
+    if (result) {
+      result = ind + and ? `${result}` : `and ${result}`;
+    }
+    result = `${
+      hundred || !(thousand || result) ? getBeforeThousand(hundred) : ""
+    }${th[ind] && hundred ? " " + th[ind] + " " : ""}${result}`;
+    if (thousand) {
+      return convert(thousand, ++ind, result, and);
+    }
+    return result.trim();
   };
 
   return convert(number);
 }
+
+module.exports = { convertNumber };
